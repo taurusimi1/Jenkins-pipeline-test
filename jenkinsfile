@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages{
+        stage("git checkout"){
+            steps{
+            git credentialsId: 'd0176c9a-b77f-4293-9d6c-8e10023a0c44', url: 'https://github.com/taurusimi1/Jenkins-pipeline-test.git'
+            }
+        }
+        stage("python run"){
+            steps{
+            sh 'python array.py'
+            }
+        }
+    }
+}
